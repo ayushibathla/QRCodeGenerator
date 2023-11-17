@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* so that on giving padding and margin the actual size of box does not changes instead the content gets shrinked */
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background: #262a2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+.container{
+  width:400px;
+  padding: 25px 35px;
+  background: #fff;
+  border-radius: 10px;
+}
+.container p{
+  font-weight:600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.container input{
+  border-radius: 5px;
+  margin: 10px 0 20px;
+  padding:10px;
+  outline:0;
+  border:1px solid #494eea;
+  height:50px;
+  width:100%;
+}
+
+.container button{
+  width: 100%;
+  height:50px;
+  background: #494eea;
+  color:#fff;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  box-shadow:0 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  margin:20px 0;
+  font-weight: 500;
+}
+
+/* for animation */
+#imgBox{
+  width:200px;
+  border-radius: 5px;
+  max-height: 0;      
+  /* initially it is hidden */
+  overflow: hidden;     
+  /* extra image that comes out of the box gets hidden  */
+  transition : max-height 1s;
+}
+#imgBox img{
+  width:100%;
+  padding:10px;
+}
+#imgBox.show-image{
+  max-height: 300px;
+  margin:10px auto;
+  border:1px solid #d1d1d1;
+}
+
+/* to add animation when input field is empty */
+.error{
+  animation: shake 0.1s linear 10;
+}
+@keyframes shake{
+  /* no movement */
+  0%{
+    transform: translate(0);   
+  }
+  /* go left for 2 px*/
+  25%{
+    transform: translate(-2px);   
+  }
+  /* come back to 0 */
+  50%{
+    transform: translate(0);   
+  }
+  /* go right for 2 px*/
+  75%{
+    transform: translate(2px);   
+  }
+  100%{
+    transform: translate(0);   
+  }
+}
